@@ -14,8 +14,8 @@ app.use('/', indexRoute);
 app.use('/notes', indexRoute);
 app.use(notesRoute);
 
-
+const port = process.env.PORT || 3000;
 // listen
-app.listen(3000, () => {
-    console.log(`API server now on port 3000!`);
+app.listen(port, () => {
+    console.log(`API server now on port ${port}!`);
 });
