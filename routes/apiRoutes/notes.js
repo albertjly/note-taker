@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const express = require('express');
 const router = require('express').Router();
-const notesData = require('../../db/db.json');
+let notesData = require('../../db/db.json');
+const { nanoid }= require('nanoid');
 
 router.post('/api/notes', (req, res)=>{
-    const id = parseInt(Math.random() * 100000).toString();
+    const id = nanoid();
     const newNote = createNewNote(req.body, id, notesData);
     res.json(newNote);
 });
@@ -13,6 +13,27 @@ router.post('/api/notes', (req, res)=>{
 router.get('/api/notes', (req, res)=>{
     res.json(notesData);
 });
+
+router.delete('/api/notes/:id', function (req, res) {
+    const result = filterById(req.params.id, notesData);
+    // console.log(req.params.id);
+    fs.writeFile(
+        path.join(__dirname, '../../db/db.json'),
+        JSON.stringify(result, null, 2),
+        (err) => {
+            if (err) throw err;
+            console.log('The file has been saved!');
+            notesData = result;
+            res.json(result);
+        });
+    console.log(result);
+});
+
+
+function filterById(id, notesArray) {
+    const result = notesArray.filter(note => note.id !== id);
+    return result;
+}
 
 function createNewNote(note, id, noteArray) {
     note.id = id;
