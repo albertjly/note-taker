@@ -27,37 +27,30 @@ node app.js
 
 >## **_Usage_**
 
-use npm stall
+Click on the "Get Started" button, you can insert note title and note details and click on the save button on the top right corner. You can click each notes on the left side for checking the details.
 
-Provide instructions and examples for use.
+**`Wider Screen`**
 
-**Wider Screen**
-
-![screenshot](./assets/images/screenshot.png)
-
-**Mobile Screen**
-
-![screenshot](./assets/images/mobile-screenshot.png)
+<img src="./public/assets/images/Note-Taker.png" width="1000">
 
 
 >## **_Credits_**
+I took more than two weeks to finish this project, because I made a small mistake on notes.js and index.js of routes file. I asked the TAs, the instructor, but they didn't find the problem. At last, I figured something wrong and I asked my tutor for help. We fixed the bug.
 
-myself
+I think some of TAs don't have work-experience of the homeworks, so sometimes, they have to check challenge requirements again and again. Somehow, they might tell us something wrong! I have a suggestion for interviewing TAs, please let them do several challenges and grade them. 
 
 
 >## **_Features_**
-
-update UI
-
+- Update UI
+    - Mobile Friendly
+    - Revise Notes
+- Save to Database
+    - By using SQL
+    - Checking Duplicates Data
 
 >## **_Contributing_**
 
-If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
-
-❤️
-
-A B C
-
+❤️Albert Jiang, ❤️John Blackwell
 
 >## **_License_**
 
